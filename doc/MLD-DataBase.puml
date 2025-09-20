@@ -5,10 +5,31 @@ skinparam defaultfontname xkcd Script
 hide empty members
 
 entity Membre{
+    * id_membre : number <<PK>>
+    * id_geniALE : number <<FK>>
+    * id_departement : number <<FK>>
+    date_admission : date
 }
+
+entity geniALE{
+    * id_geniALE : number <<PK>>
+    nom : varchar
+    penom : varchar
+    linkedin : varchar <<UQ>>
+    photo : varchar
+}
+
 entity Executif{
+    * id_executif : number <<PK>>
+    * id_geniALE : number <<FK>>
+    * id_departement : number <<FK>>
+    poste : varchar <<UQ>>
+    description : varchar  
 }
 entity Departement{
+    * id_departement : number <<PK>>
+    nom : varchar<<UQ>>
+    description : varchar
 }
 entity NosBieres{
 }
@@ -16,11 +37,33 @@ entity NosBieres{
 entity Notation{
 }
 
-entity photo{
+entity Photo{
+    * id_photo : number(10) <<PK>>
+    nom : varchar(100)
+    taille : number(10)
+    type : varchar(50)
+    bin : blob(255)
 }
 
 entity Marchandise{
 }
+
+entity EvenementPhoto{
+    * id_evenement : number(10) <<FK>>
+    * id_photo : number(10) <<FK>>
+    photo : varchar(100)
+}
+
+entity Evenement{
+}
+
+entity ParticipantEvenement{
+}
+
+entity Participant{
+}
+
+
 
 
 
