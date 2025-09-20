@@ -1,0 +1,29 @@
+@startuml MLD-DataBase
+skinparam style strictuml
+skinparam packageStyle rect
+skinparam defaultfontname xkcd Script
+hide empty members
+
+entity Membre{
+}
+entity Executif{
+}
+entity Departement{
+}
+entity NosBieres{
+}
+
+entity Notation{
+}
+
+entity photo{
+}
+
+entity Marchandise{
+}
+
+
+
+
+
+@enduml
