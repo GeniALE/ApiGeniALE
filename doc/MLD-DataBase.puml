@@ -32,9 +32,16 @@ entity Departement{
     description : varchar
 }
 entity NosBieres{
+    * id_nosBiere : number <<PK>>
+    nom : varchar
+    description : varchar
+    date : date 
 }
 
-entity Notation{
+entity NotationBiere{
+    * id_notation : number <<PK>>
+    * id_nosBiere : number <<FK>>
+    note : number 
 }
 
 entity Photo{
@@ -46,21 +53,34 @@ entity Photo{
 }
 
 entity Marchandise{
+    * id_marchandise : number <<PK>>
+    nom : varchar
+    
 }
 
 entity EvenementPhoto{
-    * id_evenement : number(10) <<FK>>
-    * id_photo : number(10) <<FK>>
-    photo : varchar(100)
+    * id_evenement : number <<FK>>
+    * id_photo : number <<FK>>
+    photo : varchar
 }
 
 entity Evenement{
+    * id_evenement : number <<PK>>
+    nom : varchar
+    description : varchar
+    date : date
 }
 
 entity ParticipantEvenement{
+    * id_evenement : number <<FK>>
+    * id_participant : number <<FK>>
 }
 
 entity Participant{
+    * id_participant : number <<PK>>
+    nom : varchar
+    prenom : varchar
+    email : varchar
 }
 
 
