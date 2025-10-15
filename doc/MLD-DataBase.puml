@@ -11,10 +11,10 @@ entity Membre{
     date_admission : date
 }
 
-entity geniALE{
+entity GeniALE{
     * id_geniALE : number <<PK>>
     nom : varchar
-    penom : varchar
+    prenom : varchar
     linkedin : varchar <<UQ>>
     photo : varchar
 }
@@ -33,29 +33,33 @@ entity Departement{
 }
 entity NosBieres{
     * id_nosBiere : number <<PK>>
+    * id_photo : number <<FK>>
     nom : varchar
     description : varchar
-    date : date 
+    date_date_production : date 
 }
 
 entity NotationBiere{
     * id_notation : number <<PK>>
     * id_nosBiere : number <<FK>>
+    * id_membre : number
     note : number 
 }
 
 entity Photo{
-    * id_photo : number(10) <<PK>>
-    nom : varchar(100)
-    taille : number(10)
-    type : varchar(50)
-    bin : blob(255)
+    * id_photo : number <<PK>>
+    nom : varchar
+    taille : number
+    type : varchar
+    bin : blob
 }
 
 entity Marchandise{
     * id_marchandise : number <<PK>>
+    * id_photo : number <<FK>>
     nom : varchar
-    
+    description: varchar
+    prix : number    
 }
 
 entity EvenementPhoto{
@@ -68,7 +72,7 @@ entity Evenement{
     * id_evenement : number <<PK>>
     nom : varchar
     description : varchar
-    date : date
+    date_event : date
 }
 
 entity ParticipantEvenement{
@@ -84,9 +88,17 @@ entity Participant{
 }
 
 
+GeniALE -- Membre 
+GeniALE -- Executif
+Departement -- GeniALE
 
 
+Participant -- ParticipantEvenement
+ParticipantEvenement -- Evenement
+EvenementPhoto -- Evenement
+Photo -- EvenementPhoto
+Photo -- NosBieres
+Photo -- Marchandise
 
-
-
+NosBieres -- NotationBiere
 @enduml
