@@ -88,17 +88,17 @@ entity Participant{
 }
 
 
-GeniALE -- Membre 
-GeniALE -- Executif
-Departement -- GeniALE
+GeniALE }|--|| Membre
+GeniALE }|--|| Executif
+Departement }|--|| GeniALE
 
 
-Participant -- ParticipantEvenement
-ParticipantEvenement -- Evenement
-EvenementPhoto -- Evenement
-Photo -- EvenementPhoto
-Photo -- NosBieres
-Photo -- Marchandise
+Participant ||--o{ ParticipantEvenement
+ParticipantEvenement }o--|{ Evenement
+EvenementPhoto }o--|{ Evenement
+Photo }o--|{ EvenementPhoto
+Photo }o--|{ NosBieres
+Photo }o--|{ Marchandise
 
-NosBieres -- NotationBiere
+NosBieres }|--|| NotationBiere
 @enduml
