@@ -13,11 +13,24 @@ entity Membre{
 
 entity GeniALE{
     * id_geniALE : number <<PK>>
+    * id_calendrier : number <<FK>>
     nom : varchar
     prenom : varchar
     linkedin : varchar <<UQ>>
-    photo : varchar
+    photo : varchar   
 }
+'TODO: modifier le table pour qu'elle représente le calendrier de disponibilité 
+entity Calendrier {
+    * id_calendrier : number <<PK>>
+    date : date <<UQ>>
+    annee : number
+    mois : number
+    jour : number
+    est_ferie : boolean
+    nom_jour_semaine : varchar
+    mois_en_texte : varchar
+}
+
 
 entity Executif{
     * id_executif : number <<PK>>
@@ -92,6 +105,8 @@ GeniALE }|--|| Membre
 GeniALE }|--|| Executif
 Departement }|--|| GeniALE
 
+GeniALE ||--o{ Calendrier
+Photo ||--o{ Calendrier
 
 Participant ||--o{ ParticipantEvenement
 ParticipantEvenement }o--|{ Evenement
