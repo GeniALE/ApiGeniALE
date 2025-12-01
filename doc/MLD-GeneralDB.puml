@@ -26,9 +26,6 @@ entity Calendrier {
     annee : number
     mois : number
     jour : number
-    est_ferie : boolean
-    nom_jour_semaine : varchar
-    mois_en_texte : varchar
 }
 
 
@@ -100,17 +97,24 @@ entity Participant{
     email : varchar
 }
 
+entity EvenementCalendrier{
+    * id_evenement : number <<FK>>
+    * id_calendrier : number <<FK>>
+}
+
 
 GeniALE }|--|| Membre
 GeniALE }|--|| Executif
 Departement }|--|| GeniALE
 
-GeniALE ||--o{ Calendrier
-Photo ||--o{ Calendrier
+GeniALE ||--|| Calendrier
+EvenementCalendrier ||--|| Calendrier
+EvenementCalendrier ||--|| Evenement
 
 Participant ||--o{ ParticipantEvenement
 ParticipantEvenement }o--|{ Evenement
 EvenementPhoto }o--|{ Evenement
+
 Photo }o--|{ EvenementPhoto
 Photo }o--|{ NosBieres
 Photo }o--|{ Marchandise
