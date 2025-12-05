@@ -13,11 +13,21 @@ entity Membre{
 
 entity GeniALE{
     * id_geniALE : number <<PK>>
+    * id_calendrier : number <<FK>>
     nom : varchar
     prenom : varchar
     linkedin : varchar <<UQ>>
-    photo : varchar
+    photo : varchar   
 }
+'TODO: modifier le table pour qu'elle représente le calendrier de disponibilité 
+entity Calendrier {
+    * id_calendrier : number <<PK>>
+    date : date <<UQ>>
+    annee : number
+    mois : number
+    jour : number
+}
+
 
 entity Executif{
     * id_executif : number <<PK>>
@@ -87,18 +97,27 @@ entity Participant{
     email : varchar
 }
 
+entity EvenementCalendrier{
+    * id_evenement : number <<FK>>
+    * id_calendrier : number <<FK>>
+}
 
-GeniALE -- Membre 
-GeniALE -- Executif
-Departement -- GeniALE
 
+GeniALE }|--|| Membre
+GeniALE }|--|| Executif
+Departement }|--|| GeniALE
 
-Participant -- ParticipantEvenement
-ParticipantEvenement -- Evenement
-EvenementPhoto -- Evenement
-Photo -- EvenementPhoto
-Photo -- NosBieres
-Photo -- Marchandise
+GeniALE ||--|| Calendrier
+EvenementCalendrier ||--|| Calendrier
+EvenementCalendrier ||--|| Evenement
 
-NosBieres -- NotationBiere
+Participant ||--o{ ParticipantEvenement
+ParticipantEvenement }o--|{ Evenement
+EvenementPhoto }o--|{ Evenement
+
+Photo }o--|{ EvenementPhoto
+Photo }o--|{ NosBieres
+Photo }o--|{ Marchandise
+
+NosBieres }|--|| NotationBiere
 @enduml
