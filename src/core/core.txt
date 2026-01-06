@@ -1,0 +1,1 @@
+Tout se qui peut être utile pour l'api, c'est le coeur. C'est le fichier temporaire pour l'architecture des fichiers.
