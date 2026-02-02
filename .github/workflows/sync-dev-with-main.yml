@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.inputs.confirm == 'CONFIRM'
     
+    permissions:
+      contents: write  # Required to push to branches
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
