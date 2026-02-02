@@ -10,7 +10,19 @@ Rendre la branche `dev` identique à la branche `main`.
 
 ## Solution
 
-### Option 1: Utiliser le script automatisé (Recommandé)
+### Option 1: Via GitHub Actions (Le plus simple)
+
+Un workflow GitHub Actions a été créé pour automatiser le processus de manière sécurisée:
+
+1. Aller sur https://github.com/GeniALE/ApiGeniALE/actions
+2. Cliquer sur "Sync Dev with Main (Manual Trigger)" dans la liste des workflows
+3. Cliquer sur "Run workflow"
+4. Taper "CONFIRM" dans le champ de confirmation
+5. Cliquer sur "Run workflow" pour démarrer
+
+Le workflow va automatiquement synchroniser dev avec main et vérifier que l'opération a réussi.
+
+### Option 2: Utiliser le script automatisé local
 
 Un script bash a été créé pour automatiser le processus. Pour l'exécuter:
 
@@ -25,7 +37,7 @@ Le script va:
 4. Force-pusher la branche dev vers le remote
 5. Afficher une vérification
 
-### Option 2: Commandes manuelles
+### Option 3: Commandes manuelles
 
 Si vous préférez exécuter les commandes manuellement:
 
@@ -43,7 +55,7 @@ git reset --hard origin/main
 git push --force origin dev
 ```
 
-### Option 3: Via GitHub Web Interface
+### Option 4: Via GitHub Web Interface
 
 1. Aller sur https://github.com/GeniALE/ApiGeniALE
 2. Créer une nouvelle Pull Request de `main` vers `dev`
