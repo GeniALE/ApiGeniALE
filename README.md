@@ -25,7 +25,9 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 ### 2. Installation des technologies utilisé
 
-- `uv sync`
+```bash
+uv sync
+```
 
 ## Technologies utilisées
 
