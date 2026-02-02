@@ -1,3 +1,32 @@
 .dist
 .vscode
+__pycache__
 out
+
+# Virtual environments
+venv/
+.venv/
+
+# Build outputs
+dist/
+build/
+
+# Test artifacts
+.pytest_cache/
+coverage/
+
+# IDE & tooling
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Deployment
+app/static/
+app/uploads/
+
+# Docker
+.docker/
+.dockerignore

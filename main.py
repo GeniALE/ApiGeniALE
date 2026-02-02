@@ -1,6 +1,11 @@
-def main():
-    pass
+import uvicorn
+from fastapi import FastAPI
+from app.routes import members
+
+
+app = FastAPI()
+app.include_router(members.route)
 
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run(app, host="0.0.0.0", port=8000)

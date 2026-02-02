@@ -13,7 +13,7 @@ Documentation de l'API REST permettant de gérer les membres, génies, départem
 3. [Schémas](#schémas)
 4. [Endpoints](#endpoints)
 
-   * [GeniALE](#geniale)
+   * [Membres GeniALE](#membres-geniale)
    * [Membres](#membres)
    * [Départements](#départements)
    * [Exécutifs](#exécutifs)
@@ -29,7 +29,7 @@ Documentation de l'API REST permettant de gérer les membres, génies, départem
 
 Cette API permet de :
 
-* Gérer les membres de géniale 
+* Gérer les membres de géniale
 * Gérer les génies (personnes référencées)
 * Gérer les départements
 * Gérer les membres de l’exécutif
@@ -41,7 +41,8 @@ Cette API permet de :
 ---
 
 ## Authentification
-A discuter mais on reflechira a un systeme de token et d'auth peux etre 
+
+A discuter mais on reflechira a un systeme de token et d'auth peux etre
 
 ---
 
@@ -155,11 +156,9 @@ Cette section regroupe les structures JSON utilisées par les routes.
 
 ## Endpoints
 
-Cette section décrit toutes les routes de l’API.
+Cette section décrit toutes les routes de l'API.
 
----
-
-## GeniALE
+## Membres GeniALE
 
 ### GET /geniale
 
@@ -301,8 +300,7 @@ Crée une marchandise.
 
 ## Événements
 
-
-### Get /evenements 
+### Get /evenements
 
 Liste les evenements.
 
