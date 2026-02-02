@@ -27,6 +27,10 @@ Le workflow va automatiquement synchroniser dev avec main et vérifier que l'op�
 Un script bash a été créé pour automatiser le processus. Pour l'exécuter:
 
 ```bash
+# Rendre le script exécutable (si nécessaire)
+chmod +x sync-dev-with-main.sh
+
+# Exécuter le script
 ./sync-dev-with-main.sh
 ```
 
