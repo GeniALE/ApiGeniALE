@@ -9,3 +9,7 @@ app.include_router(members.route)
 async def health_check():
 	return {"status": "ok"}
 
+@app.get("/", tags=["root"])
+async def root():
+    return {"message": "Bienvenue sur l'API de GeniALE!"}
+
