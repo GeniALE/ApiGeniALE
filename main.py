@@ -1,10 +1,5 @@
 import uvicorn
-from fastapi import FastAPI
-from app.routes import members
-
-
-app = FastAPI()
-app.include_router(members.route)
+from app.app import app
 
 
 if __name__ == "__main__":

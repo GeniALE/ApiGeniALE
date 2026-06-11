@@ -1,0 +1,1 @@
+"""Database initialization script for the GeniALE API."""

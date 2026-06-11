@@ -29,6 +29,11 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 uv sync
 ```
 
+### 3. Générer le .venv
+```bash
+uv venv
+```
+
 ## Technologies utilisées
 
 - [FastAPI](https://fastapi.tiangolo.com/)
